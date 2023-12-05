@@ -121,7 +121,9 @@ h1 {
     .block-cube.block-input input {
         position: relative;
         z-index: 2;
-    }
+    top: 0px;
+    left: 0px;
+}
 
         .block-cube.block-input input:focus ~ .bg-right .bg-inner, .block-cube.block-input input:focus ~ .bg-top .bg-inner, .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
             top: 100%;
