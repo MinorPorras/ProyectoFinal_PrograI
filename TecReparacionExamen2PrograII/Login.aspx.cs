@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TecReparacionExamen2PrograII.CLS;
 
 namespace TecReparacionExamen2PrograII
 {
@@ -16,7 +17,12 @@ namespace TecReparacionExamen2PrograII
 
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
-
+            ClsUsers.SetNombre(TextBoxUser.Text);
+            ClsUsers.SetClave(TextBoxContraseña.Text);
+            if (ClsUsers.ValidarLogin() > 0) 
+            {
+                Response.Redirect("tecnicos.aspx");
+            }
         }
     }
 }

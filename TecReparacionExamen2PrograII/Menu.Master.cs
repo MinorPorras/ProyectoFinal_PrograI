@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TecReparacionExamen2PrograII.CLS;
 
 namespace TecReparacionExamen2PrograII
 {
@@ -11,7 +12,7 @@ namespace TecReparacionExamen2PrograII
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelUsuario.Text = $"Usuario: {ClsUsers.GetNombre()}";
         }
     }
 }

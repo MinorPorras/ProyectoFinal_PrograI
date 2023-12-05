@@ -54,11 +54,7 @@ h1 {
 }
 h3 {
     color: #96ff44;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin: 0em;
 }
 p{
     color:#b8ff92;
