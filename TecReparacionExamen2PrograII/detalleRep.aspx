@@ -32,12 +32,12 @@
                 <br />
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Fecha de inicio:</label> <br />
-                    <asp:TextBox ID="TextBoxFechaInicio" class="form-control" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxFechaInicio" type="date" class="form-control" runat="server"></asp:TextBox><br />
                 </div>
                 <br />
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Fecha de final:</label> <br />
-                    <asp:TextBox ID="TextBoxFechaFin" class="form-control" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxFechaFin"  type="date" class="form-control" runat="server"></asp:TextBox><br />
                 </div>
         </div>
         <br />
