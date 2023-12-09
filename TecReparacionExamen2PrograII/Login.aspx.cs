@@ -17,8 +17,7 @@ namespace TecReparacionExamen2PrograII
 
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
-            ClsUsers.SetNombre(TextBoxUser.Text);
-            ClsUsers.SetClave(TextBoxContraseña.Text);
+            ClsUsers Usuario = new ClsUsers(TextBoxUser.Text, TextBoxContraseña.Text);
             if (ClsUsers.ValidarLogin() > 0) 
             {
                 Response.Redirect("tecnicos.aspx");

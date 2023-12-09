@@ -14,14 +14,12 @@ namespace TecReparacionExamen2PrograII.CLS
         private static int ID;
         private static string Nombre;
         private static string Clave;
-        private static string Correo;
 
       //Constructor
-        public ClsUsers(string nombre, string clave, string correo)
+        public ClsUsers(string nombre, string clave)
         {
             Nombre = nombre;
             Clave = clave;
-            Correo = correo;
         }
 
         public ClsUsers()
@@ -47,16 +45,6 @@ namespace TecReparacionExamen2PrograII.CLS
         public static void SetClave(string clave) 
         {
             Clave = clave;
-        }
-
-        public static string GetCorreo() 
-        {
-            return Correo;
-        }
-
-        public static void SetCorreo(string correo) 
-        {
-            Correo = correo;
         }
 
         public static int ValidarLogin()
