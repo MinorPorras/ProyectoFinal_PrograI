@@ -32,7 +32,7 @@
                 <br />
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Fecha de asignación:</label> <br />
-                    <asp:TextBox ID="TextBoxFechaAsig" class="form-control" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxFechaAsig"  type="date" class="form-control" runat="server"></asp:TextBox><br />
                 </div>
                 <br />
         </div>

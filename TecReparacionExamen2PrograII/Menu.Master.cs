@@ -12,7 +12,20 @@ namespace TecReparacionExamen2PrograII
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LabelUsuario.Text = $"Usuario: {ClsUsers.GetNombre()}";
+            string rol = "";
+            if (ClsUsers.GetRol() == "1") 
+            {
+                rol = "Usuario";
+            }
+            if (ClsUsers.GetRol() == "2")
+            {
+                rol = "Tecnico";
+            }
+            if (ClsUsers.GetRol() == "3")
+            {
+                rol = "Admin";
+            }
+            LabelUsuario.Text = $"Usuario: {ClsUsers.GetNombre()}   Rol: {rol}";
         }
     }
 }
