@@ -1,7 +1,7 @@
 
 CREATE DATABASE PlatReparacion
 GO
-
+USE PlatReparacion
 CREATE TABLE users
 (
 	id int identity (1,1) PRIMARY KEY NOT NULL,
@@ -15,13 +15,19 @@ INSERT INTO users VALUES ('Carlos', 'Carlos@correo.com', '1234')
 INSERT INTO users VALUES ('Ashley', 'Ashley@correo.com', '1234')
 GO
 
-CREATE PROCEDURE validarUsers
+SELECT * FROM users
+GO
+
+ALTER PROCEDURE validarUsers
 @NOMBRE VARCHAR(20),
 @CLAVE VARCHAR (50)
 AS
 	BEGIN
 		SELECT nombre, clave FROM users WHERE nombre=@NOMBRE AND clave=@CLAVE
 	END
+GO
+
+EXEC validarUsers 'minor', '0974'
 GO
 
 SELECT * FROM users
