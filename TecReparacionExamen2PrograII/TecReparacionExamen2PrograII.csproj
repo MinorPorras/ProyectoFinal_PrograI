@@ -92,9 +92,9 @@
     <Compile Include="CLS\DBConn.cs" />
     <Compile Include="CLS\detallesReparacion.cs" />
     <Compile Include="CLS\equipos.cs" />
+    <Compile Include="CLS\Login.cs" />
     <Compile Include="CLS\reparaciones.cs" />
     <Compile Include="CLS\tecnicos.cs" />
-    <Compile Include="CLS\ClsUsers.cs" />
     <Compile Include="CLS\usuario.cs" />
     <Compile Include="detalleRep.aspx.cs">
       <DependentUpon>detalleRep.aspx</DependentUpon>

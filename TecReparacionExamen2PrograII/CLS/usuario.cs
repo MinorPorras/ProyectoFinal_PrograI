@@ -9,10 +9,10 @@ namespace TecReparacionExamen2PrograII.CLS
 {
     public class usuario
     {
-        public int usuarioID { get; set; }
-        public string nombre { get; set; }
-        public string correo { get; set; }
-        public string telefono { get; set; }
+        public int usuarioID;
+        public string nombre;
+        public string correo;
+        public string telefono;
 
         //Constructores
         public usuario(string nombre, string correo, string telefono)

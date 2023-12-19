@@ -17,7 +17,10 @@ INSERT INTO login VALUES ('109','1234')
 INSERT INTO login VALUES ('110','1234')
 GO
 
-CREATE PROCEDURE validarLogin
+SELECT * FROM login
+GO
+
+ALTER PROCEDURE validarLogin
 @USUARIOID int,
 @CLAVE VARCHAR (50)
 AS
@@ -26,11 +29,14 @@ AS
 	END
 GO
 
+EXEC validarLogin 102, '0974'
+GO
+
 ALTER PROCEDURE obtenerusuarioID
-@NOMBRE VARCHAR(20)
+@Nombre VARCHAR(20)
 AS
 	BEGIN
-		select usuarioID FROM usuario WHERE nombre = @NOMBRE
+		select usuarioID FROM usuario WHERE nombre = @Nombre
 	END
 GO
 EXEC obtenerusuarioID 'minor'
@@ -44,7 +50,9 @@ AS
 	END
 GO
 
-SELECT * FROM users
+EXEC obtenerRol '102'
+GO
+SELECT * FROM usuarioRol
 GO
 /*-------------------------Fin de tabla Login-----------------------------*/
 /*------------------------------------------Tablas Roles------------------------------------*/
@@ -87,6 +95,9 @@ GO
 
 INSERT INTO usuario VALUES ('Ashley', 'Ashley@correo', '01473692')
 INSERT INTO usuario VALUES ('Carlos', 'Carlos@correo', '01473693')
+GO
+
+select * FROM usuario
 GO
 
 /*-------Procedimientos almacenados--------*/

@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class=" contanie text-center">
+        <br />
             <h3>Técnicos</h3>
     </div>
         <div>
@@ -35,6 +36,7 @@
         <asp:Button ID="Button2" runat="server" Text="Modificar" CssClass="btn" OnClick="Button2_Click" />
         <asp:Button ID="Button3" runat="server" Text="Eliminar" CssClass="btn" OnClick="Button3_Click" />
         <asp:Button ID="Button4" runat="server" Text="Consultar" CssClass="btn" OnClick="Button4_Click" />
+        <asp:Button ID="Button5" runat="server" Text="Reporte" CssClass="btn"/>
         <br />
         <br />
     </div>

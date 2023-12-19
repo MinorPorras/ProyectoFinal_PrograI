@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <div class=" contanie text-center">
+                <br />
             <h3>Detalles de reparaciones</h3>
     </div>
         <div>
