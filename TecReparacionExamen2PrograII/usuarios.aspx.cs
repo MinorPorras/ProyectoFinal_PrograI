@@ -107,12 +107,14 @@ namespace TecReparacionExamen2PrograII
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(TextBoxID.Text);
-            string constr = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM usuario WHERE usuarioID ='" + codigo + "'"))
-
+                SqlCommand cmd = new SqlCommand("consultaUsuarioFiltro", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", int.Parse(TextBoxID.Text)));
 
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
@@ -122,7 +124,7 @@ namespace TecReparacionExamen2PrograII
                     {
                         sda.Fill(dt);
                         datagridUsuarios.DataSource = dt;
-                        datagridUsuarios.DataBind();  // actualizar el grid view
+                        datagridUsuarios.DataBind();  // Refrescar los datos
                     }
                 }
             }

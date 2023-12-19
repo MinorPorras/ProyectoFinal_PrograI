@@ -22,12 +22,13 @@
             <a href="usuarios.aspx" class="btn">Usuarios</a>
             <a href="equipos.aspx" class="btn">Equipos</a>
             <a href="Reparaciones.aspx" class="btn">Reparaciones</a>
-            <a href="detalleRep.aspx" class="btn">Detalles de reparación</a>
+            <a href="detalleRep.aspx" class="btn">Detalles de rep</a>
             <a href="Asignaciones.aspx" class="btn">Asignaciones</a>
             <br />
             <br />
             <hr class="border border-primary border-3 opacity-75">
             <asp:Label ID="LabelUsuario" runat="server" Text="Usuario: "></asp:Label>
+            <br />
         </header>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

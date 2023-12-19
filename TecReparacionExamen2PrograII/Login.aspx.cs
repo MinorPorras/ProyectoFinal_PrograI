@@ -17,11 +17,12 @@ namespace TecReparacionExamen2PrograII
 
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
-            ClsUsers.SetNombre(TextBoxUser.Text);
-            ClsUsers.SetClave(TextBoxContraseña.Text);
-            ClsUsers.obtenerIDusuario();
-            ClsUsers.obtenerRol();
-            if (ClsUsers.ValidarLogin() > 0) 
+            LoginWeb.SetNombre(TextBoxUser.Text);
+            LoginWeb.SetClave(TextBoxContraseña.Text);
+            LoginWeb.ObtenerusuarioID();
+            LoginWeb.ObtenerRol();
+            LoginWeb.SetNombreRol();
+            if (LoginWeb.ValidarLogin() > 0) 
             {
                 Response.Redirect("tecnicos.aspx");
             }

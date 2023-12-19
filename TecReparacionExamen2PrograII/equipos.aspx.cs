@@ -92,12 +92,14 @@ namespace TecReparacionExamen2PrograII
         }
         protected void Button4_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(TextBoxID.Text);
-            string constr = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM equipos WHERE equiposID ='" + codigo + "'"))
-
+                SqlCommand cmd = new SqlCommand("consultaequiposFiltro", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", int.Parse(TextBoxID.Text)));
 
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
@@ -107,7 +109,7 @@ namespace TecReparacionExamen2PrograII
                     {
                         sda.Fill(dt);
                         datagridEquipos.DataSource = dt;
-                        datagridEquipos.DataBind();  // actualizar el grid view
+                        datagridEquipos.DataBind();  // Refrescar los datos
                     }
                 }
             }
