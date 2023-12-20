@@ -394,6 +394,18 @@ AS
 
 
 
+/*Proceso almacenado para la generación del reporte de usuarios*/
+CREATE PROCEDURE reporteUsuario
+AS
+	BEGIN
+	SELECT U.UsuarioID, U.Nombre, E.TipodeEquipo, D.Descripcion, D.FechaFinal
+	FROM Usuario U
+	INNER JOIN Equipos E ON U.UsuarioID = E.UsuarioID
+	INNER JOIN Reparaciones R ON E.EquiposID = R.EquipoID
+	INNER JOIN DetalleReparacion D ON R.ReparacionesID = D.ReparacionID
+	END
+GO
+
 
 
 USE PlatReparacion
