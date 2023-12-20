@@ -133,5 +133,29 @@ namespace TecReparacionExamen2PrograII
             TextBoxCorreo.Text = "nombre@correo.com";
             TextBoxTel.Text = "";
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                SqlCommand cmd = new SqlCommand("reporteUsuario", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = con;
+                    sda.SelectCommand = cmd;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        datagridUsuarios.DataSource = dt;
+                        datagridUsuarios.DataBind();  // Refrescar los datos
+                    }
+                }
+            }
+        }
     }
 }
